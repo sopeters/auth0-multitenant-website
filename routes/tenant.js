@@ -6,7 +6,7 @@ var router = express.Router();
 dotenv.load();
 
 function buildTenants (req) {  
-  var groups = req.user._json[`http://${process.env.ROOT_DOMAIN}/claims/groups`]
+  var groups = req.user._json[`http://${process.env.ROOT_DOMAIN}:${process.env.PORT}/claims/groups`]
 
   return groups.map(tenant => {
     return {

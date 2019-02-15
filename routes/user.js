@@ -11,7 +11,7 @@ router.get('/',
   tenant.ensureCurrent(),
   tenant.ensureUrl(),
   function(req, res) {
-    var tenants = req.user._json[`http://${process.env.ROOT_DOMAIN}/claims/groups`].map(tenant => {
+    var tenants = req.user._json[`http://${process.env.ROOT_DOMAIN}:${process.env.PORT}/claims/groups`].map(tenant => {
       var isActive = tenant === req.tenant;
 
       return {
